@@ -1,24 +1,25 @@
 /** @type {import("snowpack").SnowpackUserConfig } */
 module.exports = {
   mount: {
-    public: {url: "/", static: true},
-    src: {url: "/dist"},
+    public: { url: '/', static: true },
+    src: { url: '/dist' },
   },
   alias: {
-    "~/": "./src/",
+    '~/': './src/',
   },
-  exclude: ["**/node_modules/**/*", "**/*.test.ts?(x)"],
+  exclude: ['**/node_modules/**/*', '**/*.test.ts?(x)'],
   plugins: [
-    "@snowpack/plugin-webpack",
-    "@snowpack/plugin-react-refresh",
-    "@snowpack/plugin-typescript",
+    '@snowpack/plugin-webpack',
+    '@snowpack/plugin-react-refresh',
+    '@snowpack/plugin-dotenv',
+    '@snowpack/plugin-typescript',
   ],
   routes: [
     /* Enable an SPA Fallback in development: */
     {
-      match: "all",
-      src: "(?!.*(.svg|.gif|.json|.jpg|.jpeg|.png|.js)).*",
-      dest: "/index.html",
+      match: 'all',
+      src: '(?!.*(.svg|.gif|.json|.jpg|.jpeg|.png|.js)).*',
+      dest: '/index.html',
     },
   ],
   optimize: {
