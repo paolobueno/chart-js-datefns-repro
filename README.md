@@ -1,6 +1,12 @@
-# New Project
+# `react-chartjs-2` adapter overwriting issue repro
 
 > ✨ Bootstrapped with Create Snowpack App (CSA).
+
+This repo is a reproduction of an issue that does not allow usage of `chartjs-adapter-date-fns` and likely other date adapters with `react-chartjs-2`.
+
+These adapters affect the `chart.js` library by calling `_adapters._date.override()`, which modifies the prototype of a default internal stub adapter that throws on invocation of any of its methods.
+
+Currently `react-chartjs-2` seems to ignore this override call when used.
 
 ## Available Scripts
 

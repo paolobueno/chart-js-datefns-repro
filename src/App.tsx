@@ -164,8 +164,10 @@ function App({}: AppProps) {
         </p>
       </header>
 
+      {/* The following chart breaks! */}
       <Line options={options} data={data} />
 
+      {/* Usuing chart.js directly with a canvas ref works */}
       <canvas ref={canvasRef} />
     </div>
   );
